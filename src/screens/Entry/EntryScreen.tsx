@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import Heading from '../../components/shared/Heading/Heading';
 import Screen from '../../components/shared/Screen/Screen';
-import MoodLevelButton from '../../components/ToggleButton/ToggleButton';
-import useRadioButtons from '../../components/ToggleButton/useRadioButton';
+import MoodLevelButton from '../../components/MoodLevelButton/MoodLevelButton';
+import useRadioButtons from './hooks/useRadioButton';
 import colors from '../../theme/colors';
 import styles from './styles';
 
@@ -37,7 +38,7 @@ const EntryScreen = () => {
 
   return (
     <Screen>
-      <Text style={styles.heading}>How would you rate your mood?</Text>
+      <Heading content="How would you rate your mood?" isTop />
       <View style={styles.moodLevelButtons}>
         {buttons.map(({ id, value, color }) => (
           <MoodLevelButton
@@ -50,7 +51,7 @@ const EntryScreen = () => {
           />
         ))}
       </View>
-      <Text style={styles.heading}>How are you feeling?</Text>
+      <Heading content="How are you feeling?" />
     </Screen>
   );
 };

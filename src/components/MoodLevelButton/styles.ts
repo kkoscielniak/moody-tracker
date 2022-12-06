@@ -21,6 +21,5 @@ export default ({ isSelected, color }: Props) =>
     text: {
       fontFamily: 'Montserrat-SemiBold',
       fontSize: 18,
-      // color: isSelected ? '#000000' : color,
     },
   });
