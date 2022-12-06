@@ -1,39 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  View,
-} from 'react-native';
+import EntryScreen from './screens/Entry/EntryScreen';
+import HomeScreen from './screens/Home/HomeScreen';
+import RootStackParams from './types/RootStackParams';
 
-import DataEntry from './components/DataEntry/DataEntry';
-import styles from './styles';
-
-const HomeScreen = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <SafeAreaView>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={styles.container}>
-          <DataEntry />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParams>();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Moody Tracker" component={HomeScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Moody Tracker' }}
+        />
+        <Stack.Screen name="Entry" component={EntryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

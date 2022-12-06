@@ -1,12 +1,22 @@
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableHighlight } from 'react-native';
+import RootStackParams from '../../../types/RootStackParams';
 import styles from './styles';
 
 const NewEntryTile: FC = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+
+  const handlePress = () => {
+    navigation.navigate('Entry');
+  };
+
   return (
-    <View style={styles.container}>
+    <TouchableHighlight style={styles.container} onPress={handlePress}>
       <Text style={styles.plusSign}>+</Text>
-    </View>
+    </TouchableHighlight>
   );
 };
 
