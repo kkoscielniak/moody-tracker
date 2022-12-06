@@ -1,9 +1,9 @@
 export type Feeling = 'meh' | 'content' | 'happy' | 'frustrated';
 
 type MoodEntry = {
-  id: number;
-  feeling: Feeling[];
-  value: number;
+  // id: number;
+  feelings: Feeling[];
+  moodLevel: number;
 };
 
 export default MoodEntry;

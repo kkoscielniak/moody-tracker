@@ -9,9 +9,8 @@ export interface State {
 const initialState: State = {
   entries: [
     {
-      id: 0,
-      feeling: ['happy'],
-      value: 5,
+      feelings: ['happy'],
+      moodLevel: 5,
     },
   ],
 };

@@ -1,47 +1,57 @@
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import React, { useCallback, useEffect } from 'react';
+import { Button, Text, TouchableOpacity, View } from 'react-native';
 import Heading from '../../components/shared/Heading/Heading';
 import Screen from '../../components/shared/Screen/Screen';
 import MoodLevelButton from '../../components/MoodLevelButton/MoodLevelButton';
-import useRadioButtons from './hooks/useRadioButtons';
+import useRadios from './hooks/useRadios';
 import colors from '../../theme/colors';
 import styles from './styles';
 import useCheckboxes from './hooks/useCheckboxes';
+import { useNavigation } from '@react-navigation/native';
+import { useAppDispatch } from '../../store/hooks';
+import { addEntry } from '../../store/reducer';
 
 const EntryScreen = () => {
+  const navigation = useNavigation();
+  const dispatch = useAppDispatch();
+
   const {
-    buttons: moodLevelButtons,
-    selectedButtonId: selectedMoodLevelId,
-    selectButton: selectMoodLevel,
-  } = useRadioButtons([
+    radios: moodLevelButtons,
+    selectedRadio: selectedMoodLevel,
+    selectRadio: selectMoodLevel,
+  } = useRadios([
     {
-      id: 1,
-      value: '😡 1',
+      content: '😡 1',
+      value: 1,
       color: colors.moodAngryColor,
     },
     {
-      id: 2,
-      value: '😞 2',
+      content: '😞 2',
+      value: 2,
       color: colors.moodSadColor,
     },
     {
-      id: 3,
-      value: '😐 3',
+      content: '😐 3',
+      value: 3,
       color: colors.moodNeutralColor,
     },
     {
-      id: 4,
-      value: '🙂 4',
+      content: '🙂 4',
+      value: 4,
       color: colors.moodContentColor,
     },
     {
-      id: 5,
-      value: '😁 5',
+      content: '😁 5',
+      value: 5,
       color: colors.moodHappyColor,
     },
   ]);
 
-  const { checkboxes: feelingButtons, toggleCheckbox } = useCheckboxes([
+  const {
+    checkboxes: feelings,
+    selectedCheckboxes: selectedFeelings,
+    toggleCheckbox,
+  } = useCheckboxes([
     {
       value: 'frustrated',
     },
@@ -56,6 +66,29 @@ const EntryScreen = () => {
     },
   ]);
 
+  const handleAddButton = useCallback(() => {
+    dispatch(
+      addEntry({
+        feelings: selectedFeelings.map(feeling => feeling.value),
+        moodLevel: selectedMoodLevel!.value,
+      }),
+    );
+
+    navigation.goBack();
+  }, [selectedFeelings, dispatch, navigation, selectedMoodLevel]);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button
+          onPress={handleAddButton}
+          title="Add"
+          disabled={!selectedFeelings?.length || !selectedMoodLevel}
+        />
+      ),
+    });
+  }, [navigation, handleAddButton, selectedMoodLevel, selectedFeelings]);
+
   return (
     <Screen>
       <Heading content="How would you rate your mood?" isTop />
@@ -65,7 +98,7 @@ const EntryScreen = () => {
             key={id}
             id={id}
             value={value}
-            isSelected={selectedMoodLevelId === id}
+            isSelected={selectedMoodLevel?.id === id}
             onPress={selectMoodLevel}
             color={color}
           />
@@ -73,7 +106,7 @@ const EntryScreen = () => {
       </View>
       <Heading content="How are you feeling?" />
       <View>
-        {feelingButtons.map(({ value, selected, id }) => {
+        {feelings.map(({ value, selected, id }) => {
           return (
             <TouchableOpacity key={id} onPress={() => toggleCheckbox(id)}>
               <Text>

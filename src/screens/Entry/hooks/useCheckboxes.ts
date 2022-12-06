@@ -1,42 +1,47 @@
 import { useState } from 'react';
+import { Feeling } from '../../../types/MoodEntry';
 
-type Checkbox = {
-  value: string;
+type CheckboxDef = {
+  value: Feeling;
 };
 
 type CheckboxWithState = {
   id: number;
   selected: boolean;
-} & Checkbox;
+} & CheckboxDef;
 
-const useCheckboxes = (buttons: Checkbox[]) => {
-  const [checkboxes, setButtonsWithState] = useState<CheckboxWithState[]>(
-    buttons.map((button, index) => {
+const useCheckboxes = (checkboxesDefinitions: CheckboxDef[]) => {
+  const [checkboxes, setCheckboxes] = useState<CheckboxWithState[]>(
+    checkboxesDefinitions.map((checkbox, index) => {
       return {
-        ...button,
+        ...checkbox,
         id: index,
         selected: false,
       };
     }),
   );
 
-  const toggleCheckbox = (id: number): void => {
-    const buttonToBeToggled = checkboxes.find(button => button.id === id);
+  const selectedCheckboxes: CheckboxWithState[] | undefined = checkboxes.filter(
+    checkbox => checkbox.selected,
+  );
 
-    if (buttonToBeToggled) {
-      setButtonsWithState(
-        checkboxes.map(button => {
-          if (button.id === id) {
-            return { ...button, selected: !button.selected };
+  const toggleCheckbox = (id: number): void => {
+    const checkboxToToggle = checkboxes.find(checkbox => checkbox.id === id);
+
+    if (checkboxToToggle) {
+      setCheckboxes(
+        checkboxes.map(checkbox => {
+          if (checkbox.id === id) {
+            return { ...checkbox, selected: !checkbox.selected };
           }
 
-          return button;
+          return checkbox;
         }),
       );
     }
   };
 
-  return { checkboxes, toggleCheckbox };
+  return { checkboxes, selectedCheckboxes, toggleCheckbox };
 };
 
 export default useCheckboxes;
