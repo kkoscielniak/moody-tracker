@@ -4,7 +4,7 @@ import styles from './styles';
 
 interface Props {
   id: number;
-  value: string;
+  value: number;
   color: string;
   isSelected: boolean;
   onPress: (id: number) => any;
