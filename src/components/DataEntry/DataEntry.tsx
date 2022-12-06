@@ -3,6 +3,7 @@ import { FlatList, Text, View } from 'react-native';
 import MoodEntry from '../../types/MoodEntry';
 import EntryTile from '../EntryTile/EntryTile';
 import NewEntryTile from '../NewEntryTile/NewEntryTile';
+import Heading from '../shared/Heading/Heading';
 import styles from './styles';
 
 interface Props {
@@ -16,7 +17,7 @@ const DataEntry: FC<Props> = ({ entries }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>🙂 Mood</Text>
+      <Heading content="Your Moodies 😉" isTop />
       <FlatList
         horizontal
         data={entries}
