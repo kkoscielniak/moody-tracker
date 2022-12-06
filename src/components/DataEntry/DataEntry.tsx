@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList } from 'react-native';
 import MoodEntry from '../../types/MoodEntry';
 import EntryTile from '../EntryTile/EntryTile';
 import NewEntryTile from '../NewEntryTile/NewEntryTile';
+import Container from '../shared/Container/Container';
 import Heading from '../shared/Heading/Heading';
-import styles from './styles';
 
 interface Props {
   entries: MoodEntry[];
@@ -16,15 +16,15 @@ const DataEntry: FC<Props> = ({ entries }) => {
   );
 
   return (
-    <View style={styles.container}>
-      <Heading content="Your Moodies 😉" isTop />
+    <Container>
+      <Heading content="Recent Moodies 😉" isTop />
       <FlatList
         horizontal
         data={entries}
         renderItem={renderItem}
         ListFooterComponent={NewEntryTile}
       />
-    </View>
+    </Container>
   );
 };
 

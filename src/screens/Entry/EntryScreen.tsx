@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import Heading from '../../components/shared/Heading/Heading';
 import Screen from '../../components/shared/Screen/Screen';
-import MoodLevelButton from './components/MoodLevelButton/MoodLevelButton';
+import MoodLevelButton from '../../components/MoodLevelButton/MoodLevelButton';
 import useRadios from './hooks/useRadios';
 import colors from '../../theme/colors';
 import styles from './styles';
