@@ -19,7 +19,14 @@ const App = () => {
             component={HomeScreen}
             options={{ title: 'Moody Tracker' }}
           />
-          <Stack.Screen name="Entry" component={EntryScreen} />
+          <Stack.Screen
+            name="Entry"
+            component={EntryScreen}
+            options={{
+              title: 'New entry',
+              headerBackTitle: 'Back',
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
