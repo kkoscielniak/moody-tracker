@@ -6,7 +6,7 @@ import MoodLevelButton from '../../components/MoodLevelButton/MoodLevelButton';
 import useRadioButtons from './hooks/useRadioButtons';
 import colors from '../../theme/colors';
 import styles from './styles';
-import useCheckboxButtons from './hooks/useCheckboxButtons';
+import useCheckboxes from './hooks/useCheckboxes';
 
 const EntryScreen = () => {
   const {
@@ -41,21 +41,17 @@ const EntryScreen = () => {
     },
   ]);
 
-  const { selectedButtons: feelingButtons, toggleButton } = useCheckboxButtons([
+  const { checkboxes: feelingButtons, toggleCheckbox } = useCheckboxes([
     {
-      id: 0,
       value: 'frustrated',
     },
     {
-      id: 1,
       value: 'meh',
     },
     {
-      id: 2,
       value: 'content',
     },
     {
-      id: 3,
       value: 'happy',
     },
   ]);
@@ -79,7 +75,7 @@ const EntryScreen = () => {
       <View>
         {feelingButtons.map(({ value, selected, id }) => {
           return (
-            <TouchableOpacity key={id} onPress={() => toggleButton(id)}>
+            <TouchableOpacity key={id} onPress={() => toggleCheckbox(id)}>
               <Text>
                 {value} {selected ? 'YES' : 'NO'}
               </Text>
