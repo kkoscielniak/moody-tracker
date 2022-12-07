@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import MoodEntry from '../../../../types/MoodEntry';
 import getStyles from './getStyles';
 import { groupBy } from 'lodash';
@@ -19,22 +19,27 @@ const StatBar: FC<Props> = ({ entries, largestGroupLength }) => {
   });
 
   return (
-    <View style={styles.bar}>
-      {entriesByMoodLevel[1]?.map(() => (
-        <StatBarChunk moodLevel={1} />
-      ))}
-      {entriesByMoodLevel[2]?.map(() => (
-        <StatBarChunk moodLevel={2} />
-      ))}
-      {entriesByMoodLevel[3]?.map(() => (
-        <StatBarChunk moodLevel={3} />
-      ))}
-      {entriesByMoodLevel[4]?.map(() => (
-        <StatBarChunk moodLevel={4} />
-      ))}
-      {entriesByMoodLevel[5]?.map(() => (
-        <StatBarChunk moodLevel={5} />
-      ))}
+    <View style={styles.container}>
+      <View style={styles.bar}>
+        {entriesByMoodLevel[1]?.map(() => (
+          <StatBarChunk moodLevel={1} />
+        ))}
+        {entriesByMoodLevel[2]?.map(() => (
+          <StatBarChunk moodLevel={2} />
+        ))}
+        {entriesByMoodLevel[3]?.map(() => (
+          <StatBarChunk moodLevel={3} />
+        ))}
+        {entriesByMoodLevel[4]?.map(() => (
+          <StatBarChunk moodLevel={4} />
+        ))}
+        {entriesByMoodLevel[5]?.map(() => (
+          <StatBarChunk moodLevel={5} />
+        ))}
+      </View>
+      <View style={styles.box}>
+        <Text style={styles.boxText}>{entries.length}</Text>
+      </View>
     </View>
   );
 };
