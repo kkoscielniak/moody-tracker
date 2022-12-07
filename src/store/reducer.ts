@@ -7,12 +7,7 @@ export interface State {
 }
 
 const initialState: State = {
-  entries: [
-    {
-      feelings: ['happy'],
-      moodLevel: 5,
-    },
-  ],
+  entries: [],
 };
 
 export const entrySlice = createSlice({
