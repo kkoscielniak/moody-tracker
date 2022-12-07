@@ -36,6 +36,7 @@ const StatBar: FC<Props> = ({ entries, largestGroupLength }) => {
         {entriesByMoodLevel[5]?.map(() => (
           <StatBarChunk moodLevel={5} />
         ))}
+        <View style={styles.spacer} />
       </View>
       <View style={styles.box}>
         <Text style={styles.boxText}>{entries.length}</Text>

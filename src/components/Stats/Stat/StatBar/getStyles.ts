@@ -21,8 +21,8 @@ export default ({ entriesLength, largestGroupLength }: Props) => {
       overflow: 'hidden',
       height: 16,
       borderTopLeftRadius: 5,
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
+      borderTopRightRadius: 10,
+      borderBottomRightRadius: 10,
       borderBottomLeftRadius: 5,
       marginBottom: 13,
       display: 'flex',
@@ -36,17 +36,19 @@ export default ({ entriesLength, largestGroupLength }: Props) => {
       borderRadius: 13,
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'relative',
+      position: 'absolute',
       backgroundColor: colors.white,
       top: -6,
-      left: -1,
-      // right:
+      right: 0,
     },
     boxText: {
       fontFamily: 'Montserrat-SemiBold',
       fontSize: 15,
       lineHeight: 18,
       color: colors.fontBlue,
+    },
+    spacer: {
+      width: 45,
     },
   });
 };
