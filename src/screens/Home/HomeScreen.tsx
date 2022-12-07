@@ -1,6 +1,6 @@
 import React from 'react';
 import Stats from '../../components/Stats/Stats';
-import DataEntry from '../../components/DataEntry/DataEntry';
+import Entries from '../../components/Entries/Entries';
 import Screen from '../../components/shared/Screen/Screen';
 import { useAppSelector } from '../../store/hooks';
 import { RootState } from '../../store/store';
@@ -12,7 +12,7 @@ const HomeScreen = () => {
 
   return (
     <Screen>
-      <DataEntry entries={moodEntries} />
+      <Entries entries={moodEntries} />
       <Stats entries={moodEntries} />
     </Screen>
   );

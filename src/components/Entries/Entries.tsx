@@ -10,7 +10,7 @@ interface Props {
   entries: MoodEntry[];
 }
 
-const DataEntry: FC<Props> = ({ entries }) => {
+const Entries: FC<Props> = ({ entries }) => {
   const renderItem = ({ item }: { item: MoodEntry }) => (
     <EntryTile entry={item} />
   );
@@ -23,9 +23,10 @@ const DataEntry: FC<Props> = ({ entries }) => {
         data={entries}
         renderItem={renderItem}
         ListFooterComponent={NewEntryTile}
+        initialScrollIndex={entries.length - 1}
       />
     </Container>
   );
 };
 
-export default DataEntry;
+export default Entries;
