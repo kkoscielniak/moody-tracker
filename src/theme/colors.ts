@@ -8,4 +8,6 @@ export default {
   moodNeutralColor: '#FFDA00',
   moodContentColor: '#68D393',
   moodHappyColor: '#3BB7B0',
+
+  fontBlue: '#19345D',
 };

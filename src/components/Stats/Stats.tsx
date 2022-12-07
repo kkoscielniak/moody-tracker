@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import MoodEntry from '../../types/MoodEntry';
-import groupEntriesByFeelings from '../../utils/groupEntriesByFeelings';
 import mapMoodEntriesToMoodChartData from '../../utils/mapMoodEntriesToMoodChartData';
-import Bar from '../Bar/Bar';
+import Stat from './Stat/Stat';
 import Container from '../shared/Container/Container';
 import Heading from '../shared/Heading/Heading';
 
@@ -10,15 +9,22 @@ interface Props {
   entries: MoodEntry[];
 }
 
-const Bars: FC<Props> = ({ entries }) => {
-  const moodChartData = mapMoodEntriesToMoodChartData(entries);
-  console.log({ moodChartData });
+const Stats: FC<Props> = ({ entries }) => {
+  const { moodEntryGroups, largestGroupLength } =
+    mapMoodEntriesToMoodChartData(entries);
 
   return (
     <Container>
       <Heading content="Your Stats 📊" isTop />
+
+      {moodEntryGroups.map(moodEntryGroup => (
+        <Stat
+          moodEntryGroup={moodEntryGroup}
+          largestGroupLength={largestGroupLength}
+        />
+      ))}
     </Container>
   );
 };
 
-export default Bars;
+export default Stats;

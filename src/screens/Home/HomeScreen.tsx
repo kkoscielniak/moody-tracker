@@ -1,5 +1,5 @@
 import React from 'react';
-import Bars from '../../components/Bars/Bars';
+import Stats from '../../components/Stats/Stats';
 import DataEntry from '../../components/DataEntry/DataEntry';
 import Screen from '../../components/shared/Screen/Screen';
 import { useAppSelector } from '../../store/hooks';
@@ -13,7 +13,7 @@ const HomeScreen = () => {
   return (
     <Screen>
       <DataEntry entries={moodEntries} />
-      <Bars entries={moodEntries} />
+      <Stats entries={moodEntries} />
     </Screen>
   );
 };
