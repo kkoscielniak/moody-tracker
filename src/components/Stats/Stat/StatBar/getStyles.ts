@@ -8,7 +8,6 @@ interface Props {
 
 export default ({ entriesLength, largestGroupLength }: Props) => {
   const widthPercentage = (entriesLength / largestGroupLength) * 100;
-  console.log({ widthPercentage });
 
   return StyleSheet.create({
     container: {

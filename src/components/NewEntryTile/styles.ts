@@ -6,6 +6,5 @@ export default StyleSheet.create({
     backgroundColor: colors.backgroundGray,
     borderStyle: 'dashed',
     borderColor: colors.borderColor,
-    marginRight: 0,
   },
 });

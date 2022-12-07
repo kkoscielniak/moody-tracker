@@ -22,7 +22,7 @@ const Entries: FC<Props> = ({ entries }) => {
         horizontal
         data={entries}
         renderItem={renderItem}
-        ListFooterComponent={NewEntryTile}
+        ListHeaderComponent={NewEntryTile}
       />
     </Container>
   );
