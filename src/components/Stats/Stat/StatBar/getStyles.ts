@@ -10,14 +10,16 @@ export default ({ entriesLength, largestGroupLength }: Props) => {
 
   return StyleSheet.create({
     bar: {
-      backgroundColor: '#68D393',
+      overflow: 'hidden',
       width: `${widthPercentage}%`,
       height: 16,
       borderTopLeftRadius: 5,
-      borderTopRightRadius: 10,
-      borderBottomRightRadius: 10,
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
       borderBottomLeftRadius: 5,
       marginBottom: 13,
+      display: 'flex',
+      flexDirection: 'row',
     },
   });
 };
