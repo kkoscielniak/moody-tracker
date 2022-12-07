@@ -3,6 +3,7 @@ import { Feeling } from '../../../types/MoodEntry';
 
 type CheckboxDef = {
   value: Feeling;
+  content: string;
 };
 
 type CheckboxWithState = {

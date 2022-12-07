@@ -9,6 +9,6 @@ export default StyleSheet.create({
   },
   moodLevelButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
 });

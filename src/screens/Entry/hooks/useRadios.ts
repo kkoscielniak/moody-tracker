@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import mapMoodLevelToColor from '../../../utils/mapMoodLevelToColor';
 
 type RadioDef = {
   value: number;
-  content: string;
-  color: string;
 };
 
 type RadioWithState = {
   id: number;
   selected: boolean;
+  color: string;
 } & RadioDef;
 
 const useRadios = (radiosDefinitions: RadioDef[]) => {
@@ -17,6 +17,7 @@ const useRadios = (radiosDefinitions: RadioDef[]) => {
       ...radioDef,
       id: index,
       selected: false,
+      color: mapMoodLevelToColor(radioDef.value),
     })),
   );
 
