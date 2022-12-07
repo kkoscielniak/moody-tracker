@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect } from 'react';
 import { Button, View } from 'react-native';
-import Heading from '../../components/shared/Heading/Heading';
-import Screen from '../../components/shared/Screen/Screen';
-import MoodLevelButton from './components/MoodLevelButton/MoodLevelButton';
+import Heading from '../../shared/Heading/Heading';
+import Screen from '../../shared/Screen/Screen';
+import MoodLevelButton from './MoodLevelButton/MoodLevelButton';
 import useRadios from './hooks/useRadios';
 import styles from './styles';
 import useCheckboxes from './hooks/useCheckboxes';
 import { useNavigation } from '@react-navigation/native';
 import { useAppDispatch } from '../../store/hooks';
 import { addEntry } from '../../store/reducer';
-import FeelingButton from './components/FeelingButton/FeelingButton';
-import Container from '../../components/shared/Container/Container';
+import FeelingButton from './FeelingButton/FeelingButton';
+import Container from '../../shared/Container/Container';
 
 const EntryScreen = () => {
   const navigation = useNavigation();

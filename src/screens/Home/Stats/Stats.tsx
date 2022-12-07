@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import MoodEntry from '../../types/MoodEntry';
-import mapMoodEntriesToMoodChartData from '../../utils/mapMoodEntriesToMoodChartData';
+import MoodEntry from '../../../types/MoodEntry';
+import mapMoodEntriesToMoodChartData from '../../../utils/mapMoodEntriesToMoodChartData';
 import Stat from './Stat/Stat';
-import Container from '../shared/Container/Container';
-import Heading from '../shared/Heading/Heading';
+import Container from '../../../shared/Container/Container';
+import Heading from '../../../shared/Heading/Heading';
 
 interface Props {
   entries: MoodEntry[];

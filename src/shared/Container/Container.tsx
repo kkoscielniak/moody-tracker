@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { StyleSheet, View } from 'react-native';
-import colors from '../../../theme/colors';
+import colors from '../../theme/colors';
 
 const Container: FC<PropsWithChildren<{}>> = ({ children }) => (
   <View style={styles.container}>{children}</View>

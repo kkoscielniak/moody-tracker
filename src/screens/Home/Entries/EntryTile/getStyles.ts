@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../theme/colors';
-import mapMoodLevelToColor from '../../utils/mapMoodLevelToColor';
+import colors from '../../../../theme/colors';
+import mapMoodLevelToColor from '../../../../utils/mapMoodLevelToColor';
 
 interface Props {
   moodLevel: number;

@@ -1,7 +1,7 @@
 import React from 'react';
-import Stats from '../../components/Stats/Stats';
-import Entries from '../../components/Entries/Entries';
-import Screen from '../../components/shared/Screen/Screen';
+import Stats from './Stats/Stats';
+import Entries from './Entries/Entries';
+import Screen from '../../shared/Screen/Screen';
 import { useAppSelector } from '../../store/hooks';
 import { RootState } from '../../store/store';
 

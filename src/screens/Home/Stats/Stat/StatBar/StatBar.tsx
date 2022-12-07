@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Text, View } from 'react-native';
-import MoodEntry from '../../../../types/MoodEntry';
+import MoodEntry from '../../../../../types/MoodEntry';
 import getStyles from './getStyles';
 import { groupBy } from 'lodash';
 import StatBarChunk from './StatBarChunk/StatBarChunk';

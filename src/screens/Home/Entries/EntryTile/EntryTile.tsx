@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
-import MoodEntry from '../../types/MoodEntry';
-import Tile from '../shared/Tile/Tile';
+import MoodEntry from '../../../../types/MoodEntry';
+import Tile from '../../../../shared/Tile/Tile';
 import getStyles from './getStyles';
 
 interface Props {

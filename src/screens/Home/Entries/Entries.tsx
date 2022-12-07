@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { FlatList } from 'react-native';
-import MoodEntry from '../../types/MoodEntry';
-import EntryTile from '../EntryTile/EntryTile';
-import NewEntryTile from '../NewEntryTile/NewEntryTile';
-import Container from '../shared/Container/Container';
-import Heading from '../shared/Heading/Heading';
+import MoodEntry from '../../../types/MoodEntry';
+import EntryTile from './EntryTile/EntryTile';
+import NewEntryTile from './NewEntryTile/NewEntryTile';
+import Container from '../../../shared/Container/Container';
+import Heading from '../../../shared/Heading/Heading';
 
 interface Props {
   entries: MoodEntry[];

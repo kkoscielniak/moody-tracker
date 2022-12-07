@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text } from 'react-native';
-import colors from '../../../theme/colors';
-import { MoodEntryGroup } from '../../../types/MoodChartData';
+import colors from '../../../../theme/colors';
+import { MoodEntryGroup } from '../../../../types/MoodChartData';
 import StatBar from './StatBar/StatBar';
 
 interface Props {
@@ -20,7 +20,7 @@ const Stat: FC<Props> = ({
     <>
       <Text style={styles.title}>{capitalize(feeling)}</Text>
       {/* <View style={styles.bar} /> */}
-      <StatBar entries={entries} largestGroupLength={largestGroupLength} />
+      <StatBar entries={entries!} largestGroupLength={largestGroupLength} />
     </>
   );
 };
