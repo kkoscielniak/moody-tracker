@@ -23,7 +23,6 @@ const Entries: FC<Props> = ({ entries }) => {
         data={entries}
         renderItem={renderItem}
         ListFooterComponent={NewEntryTile}
-        initialScrollIndex={entries.length - 1}
       />
     </Container>
   );

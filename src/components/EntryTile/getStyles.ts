@@ -12,7 +12,6 @@ export default ({ moodLevel }: Props) => {
   return StyleSheet.create({
     container: {
       backgroundColor: accentColor || colors.backgroundGray,
-      borderColor: accentColor || colors.backgroundGray,
     },
   });
 };

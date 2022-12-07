@@ -23,7 +23,7 @@ const App = () => {
             name="Entry"
             component={EntryScreen}
             options={{
-              title: 'New entry',
+              title: 'New Moodie',
               headerBackTitle: 'Back',
             }}
           />

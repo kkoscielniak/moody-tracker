@@ -8,6 +8,7 @@ interface Props {
 
 export default ({ entriesLength, largestGroupLength }: Props) => {
   const widthPercentage = (entriesLength / largestGroupLength) * 100;
+  console.log({ widthPercentage });
 
   return StyleSheet.create({
     container: {
@@ -36,10 +37,10 @@ export default ({ entriesLength, largestGroupLength }: Props) => {
       borderRadius: 13,
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'absolute',
+      position: 'relative',
       backgroundColor: colors.white,
       top: -6,
-      right: 0,
+      left: -48,
     },
     boxText: {
       fontFamily: 'Montserrat-SemiBold',

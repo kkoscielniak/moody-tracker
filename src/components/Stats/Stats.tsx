@@ -17,8 +17,9 @@ const Stats: FC<Props> = ({ entries }) => {
     <Container>
       <Heading content="Your Stats 📊" isTop />
 
-      {moodEntryGroups.map(moodEntryGroup => (
+      {moodEntryGroups.map((moodEntryGroup, index) => (
         <Stat
+          key={index}
           moodEntryGroup={moodEntryGroup}
           largestGroupLength={largestGroupLength}
         />

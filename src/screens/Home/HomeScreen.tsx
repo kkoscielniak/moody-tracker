@@ -13,7 +13,7 @@ const HomeScreen = () => {
   return (
     <Screen>
       <Entries entries={moodEntries} />
-      <Stats entries={moodEntries} />
+      {moodEntries.length ? <Stats entries={moodEntries} /> : null}
     </Screen>
   );
 };
