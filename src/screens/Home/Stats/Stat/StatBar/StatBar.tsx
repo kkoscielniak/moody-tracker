@@ -8,9 +8,10 @@ import StatBarChunk from './StatBarChunk/StatBarChunk';
 interface Props {
   entries: MoodEntry[];
   largestGroupLength: number;
+  testID?: string;
 }
 
-const StatBar: FC<Props> = ({ entries, largestGroupLength }) => {
+const StatBar: FC<Props> = ({ entries, largestGroupLength, testID }) => {
   const entriesByMoodLevel = groupBy(entries, 'moodLevel');
 
   const styles = getStyles({
@@ -38,7 +39,7 @@ const StatBar: FC<Props> = ({ entries, largestGroupLength }) => {
         ))}
         <View style={styles.spacer} />
       </View>
-      <View style={styles.box}>
+      <View style={styles.box} testID={`${testID}_Box_${entries.length}`}>
         <Text style={styles.boxText}>{entries.length}</Text>
       </View>
     </View>

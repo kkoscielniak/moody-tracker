@@ -1,6 +1,6 @@
 # Moody Tracker
 
-For fun, I suppose. Recruitment tasks can be fun.
+For fun. Recruitments can be fun, right?
 
 ## Usage
 

@@ -97,6 +97,7 @@ const EntryScreen = () => {
               isSelected={selectedMoodLevel?.id === id}
               onPress={selectMoodLevel}
               color={color}
+              testID={`MoodLevelButton_${value}`}
             />
           ))}
         </View>
@@ -106,18 +107,17 @@ const EntryScreen = () => {
           <>
             <Heading content="How are you feeling? 😸" isTop />
             <View>
-              {feelings.map(({ content, selected, id }) => {
-                return (
-                  <FeelingButton
-                    key={id}
-                    id={id}
-                    content={content}
-                    isSelected={selected}
-                    accentColor={selectedMoodLevel?.color}
-                    onPress={() => toggleCheckbox(id)}
-                  />
-                );
-              })}
+              {feelings.map(({ content, selected, id, value }) => (
+                <FeelingButton
+                  key={id}
+                  id={id}
+                  content={content}
+                  isSelected={selected}
+                  accentColor={selectedMoodLevel?.color}
+                  onPress={() => toggleCheckbox(id)}
+                  testID={`FeelingButton_${value}`}
+                />
+              ))}
             </View>
           </>
         </Container>

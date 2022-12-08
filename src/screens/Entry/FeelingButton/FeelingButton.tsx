@@ -8,6 +8,7 @@ interface Props {
   isSelected: boolean;
   accentColor: string;
   onPress: (id: number) => any;
+  testID?: string;
 }
 
 const FeelingButton: FC<Props> = ({
@@ -16,6 +17,7 @@ const FeelingButton: FC<Props> = ({
   isSelected,
   accentColor,
   onPress,
+  testID,
 }) => {
   const styles = getStyles({ isSelected, accentColor });
 
@@ -24,7 +26,7 @@ const FeelingButton: FC<Props> = ({
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={handlePress} testID={testID}>
       <View style={styles.container}>
         <Text style={styles.text}>{content}</Text>
       </View>

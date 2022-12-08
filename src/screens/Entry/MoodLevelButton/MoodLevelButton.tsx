@@ -8,6 +8,7 @@ interface Props {
   color: string;
   isSelected: boolean;
   onPress: (id: number) => any;
+  testID?: string;
 }
 
 const MoodLevelButton: FC<Props> = ({
@@ -16,6 +17,7 @@ const MoodLevelButton: FC<Props> = ({
   color,
   isSelected,
   onPress,
+  testID,
 }) => {
   const style = styles({ isSelected, color });
 
@@ -24,7 +26,7 @@ const MoodLevelButton: FC<Props> = ({
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={handlePress} testID={testID}>
       <View style={style.container}>
         <Text style={style.text}>{value}</Text>
       </View>

@@ -10,7 +10,7 @@ interface Props {
 const EntryTile: FC<PropsWithChildren<Props>> = ({ entry: { moodLevel } }) => {
   const styles = getStyles({ moodLevel: moodLevel });
 
-  return <Tile extendStyle={styles} content={moodLevel} />;
+  return <Tile extendStyle={styles} content={moodLevel} testID={'EntryTile'} />;
 };
 
 export default EntryTile;

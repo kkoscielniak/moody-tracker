@@ -19,8 +19,11 @@ const Stat: FC<Props> = ({
   return (
     <>
       <Text style={styles.title}>{capitalize(feeling)}</Text>
-      {/* <View style={styles.bar} /> */}
-      <StatBar entries={entries!} largestGroupLength={largestGroupLength} />
+      <StatBar
+        entries={entries!}
+        largestGroupLength={largestGroupLength}
+        testID={`StatBar_${feeling}`}
+      />
     </>
   );
 };

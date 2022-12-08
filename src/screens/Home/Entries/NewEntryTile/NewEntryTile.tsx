@@ -15,7 +15,7 @@ const NewEntryTile: FC = () => {
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={handlePress} testID="NewEntryTile">
       <Tile extendStyle={styles} content="+" />
     </TouchableOpacity>
   );
