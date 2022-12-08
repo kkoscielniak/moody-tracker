@@ -9,7 +9,7 @@ For Android make sure you have Android Studio installed and at least one Android
 
 1. Clone the repository.
 2. Run `yarn`.
-3. (optionally) Go to `iOS` and run `pod install`.
+3. (optionally) Run `npx pod-install`.
    - this step is optional, because should be already done by `yarn`, but I needed to do it manually
 4. Run `yarn ios` / `yarn android`.
 
@@ -23,7 +23,9 @@ Make sure you have `iPhone 12` emulator installed in `XCode.app` with `xcrun sim
 2. Build the app for testing with `detox build --configuration ios.sim.debug`.
 3. Run `yarn test:e2e`.
 
-## Developoment notes
+If something's broken, try to reinstall Pods (`npx pod-install`).
+
+## Development notes
 
 ### RN 0.69
 
