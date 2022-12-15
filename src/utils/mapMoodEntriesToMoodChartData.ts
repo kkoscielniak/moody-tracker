@@ -4,7 +4,9 @@ import MoodChartData, {
 } from '../types/MoodChartData';
 import MoodEntry, { Feeling } from '../types/MoodEntry';
 
-const groupEntriesByFeelings = (entries: MoodEntry[]): MoodEntriesByFeelings =>
+export const groupEntriesByFeelings = (
+  entries: MoodEntry[],
+): MoodEntriesByFeelings =>
   entries.reduce((acc: MoodEntriesByFeelings, entry) => {
     const { feelings } = entry;
 
@@ -21,7 +23,7 @@ const groupEntriesByFeelings = (entries: MoodEntry[]): MoodEntriesByFeelings =>
 const getLargestGroupLength = (moodEntryGroups: MoodEntryGroup[]): number =>
   Math.max(...moodEntryGroups.map(group => group.entries!.length));
 
-const mapEntriesByFeelingsToMoodEntryGroup = (
+export const mapEntriesByFeelingsToMoodEntryGroup = (
   entriesByFeelings: MoodEntriesByFeelings,
 ): MoodEntryGroup[] => {
   const entriesByFeelingsKeys = Object.keys(entriesByFeelings);

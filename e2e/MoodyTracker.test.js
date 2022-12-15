@@ -26,7 +26,7 @@ describe('MoodyTracker', () => {
     await expect(element(by.id('TileContent_5'))).toBeVisible();
   });
 
-  it.only('should render `StatBar`s with proper values', async () => {
+  it('should render `StatBar`s with proper values', async () => {
     // when
     await element(by.id('NewEntryTile')).tap();
     await element(by.id('MoodLevelButton_5')).tap();
